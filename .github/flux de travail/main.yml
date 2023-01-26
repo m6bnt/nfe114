@@ -14,8 +14,4 @@ jobs:
         server: files.000webhost.com
         username: nsy01
         password: Password78300
-      local-dir : ./public_html/
-      exclude: |
-        /.git*
-        /.git*/
-        /node_modules/**
+        server-dir : public_html/
