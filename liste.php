@@ -1,24 +1,37 @@
 <html>
 <body>
-<h1>Liste des films</h1>
+    <h1>Liste des film</h1>
+    <?php
+    // Récupérer l'année de recherche
+    $ANNEE = $_GET['annee'];
 
+    // Connexion à la BDD
+    $base = new PDO('mysql:host=localhost; dbname=id20205722_cnam', 'id20205722_mehdi', 'J3@fy?1UpR5Rp#Ez');
+    $base->exec("SET CHARACTER SET utf8");
 
-<?php
-//Lister le contenu de la table movies
+    // Échapper les caractères spéciaux pour éviter les injections SQL
+    $ANNEE = $base->quote($ANNEE);
 
-//1° - Connexion à la BDD
-$base = new PDO('mysql:host=localhost; dbname=id20205722_cnam', 'id20205722_mehdi', 'J3@fy?1UpR5Rp#Ez');
-$base->exec("SET CHARACTER SET utf8");
+    // Construire la requête SQL
+    $sql = "SELECT titre FROM movie WHERE annee = $ANNEE";
 
-//2° - Préparation de requette et execution
-$retour = $base->query('SELECT * FROM movie;');
+    // Exécuter la requête SQL
+    $retour = $base->query($sql);
 
-//3° - Lecture du resultat de la requette
-while ($data = $retour->fetch()){
-echo $data['id']." ".$data['titre']." ".$data['genre']." ".$data['annee']."</br>";
-}
+    // Vérifier si des résultats ont été trouvés
+    if ($retour->rowCount() > 0) {
+        // Afficher les résultats sous forme de liste
+        echo "<ul>";
+        while ($data = $retour->fetch()) {
+            echo "<li>" . $data["titre"] . "</li>";
+        }
+        echo "</ul>";
+    } else {
+        echo "Aucun film trouvé pour l'année $ANNEE";
+    }
 
-?>
-
+    // Fermer la connexion à la base de données
+    $base = null;
+    ?>
 </body>
 </html>
