@@ -2,7 +2,7 @@
 
 //C'est le POI de l'utilisateur
 echo "lat\tlon\ttitle\tdescription\ticon\ticonSize\ticonOffset\n";
-echo "43.296482\t5.36978\tMoi\tMa Position\tOl_icon_blue_example.png\t24,24\t0,-24\n";
+echo "43.296482\t5.36978\tMoi\tMa Position\tluffy.png\t24,24\t0,-24\n";
 
 //1° - Connexion à la BDD
 $base = new PDO('mysql:host=localhost; dbname=id20205722_cnam', 'id20205722_mehdi', 'whV(U[WTF#ni1cY$');
