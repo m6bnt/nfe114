@@ -3,7 +3,7 @@ $long= $_GET['long'];
 $lat= $_GET['lat'];
 //C'est le POI de l'utilisateur hhh
 echo "lat\tlon\ttitle\tdescription\ticon\ticonSize\ticonOffset\n";
-echo "$lat\$long\tMoi\tMa Position\tluffy.png\t24,24\t0,-24\n";
+echo "$lat\t$long\tMoi\tMa Position\tluffy.png\t24,24\t0,-24\n";
 
 //1° - Connexion à la BDD
 $base = new PDO('mysql:host=localhost; dbname=id20205722_cnam', 'id20205722_mehdi', 'whV(U[WTF#ni1cY$');
