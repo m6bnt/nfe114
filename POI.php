@@ -1,6 +1,6 @@
 <?php
 
-//C'est le POI de l'utilisateur
+//C'est le POI de l'utilisateur hhh
 echo "lat\tlon\ttitle\tdescription\ticon\ticonSize\ticonOffset\n";
 echo "43.296482\t5.36978\tMoi\tMa Position\tluffy.png\t24,24\t0,-24\n";
 
