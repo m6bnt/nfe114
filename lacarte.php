@@ -15,7 +15,7 @@
                     });
     map.addLayer(pois);
  
-    //Set start centrepoint and zoom hhh   
+    //Set start centrepoint and zoom hhh   hhh
     var lonLat = new OpenLayers.LonLat("<?php echo $long?>","<?php echo $lat?>")
           .transform(
             new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
